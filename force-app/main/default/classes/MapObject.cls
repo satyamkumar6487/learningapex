@@ -14,7 +14,7 @@ public with sharing class MapObject {
         System.debug('Account Map: ' + accMap);
     }
     
-   public  static void sobject () {
+   public  static void  () {
 
     List<Account> acclist = new List<Account> ();
     
