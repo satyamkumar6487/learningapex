@@ -4,6 +4,39 @@
 
 public with sharing class AccountConditionWithTrigger {
 
+public static void  updateRelatedContact(List <Account> acclist , Map<Id , Account >acc01oldmap ){
+
+List <Contact> conList = new List<Contact>();
+Map <Id, Account >  accmap = new Map<Id, Account>();
+for (Account acc : acclist){
+    if (Acc.Phone != acc01oldmap.get(acc.Id).Phone){
+        accmap.put(acc.Id , acc);
+    }
+
+
+
+} 
+
+
+}
+
+
+
+public static void updatePhone(List <Account> accList , Map<Id, Account> accoldMap)    {
+
+
+
+    for (Account acc : accList) {
+       if (acc.Phone != accoldMap.get(acc.Id).Phone) {
+           acc.Description = 'Phone number is updated | Old value = ' + accoldMap.get(acc.Id).Phone + ' | New value = ' + acc.Phone ;
+        }
+    }
+
+
+
+
+}
+
 
 
 public static void createOpp(List <Account> acclist ){
@@ -32,5 +65,10 @@ insert oppList;
                 acc.Description = 'Account is created ';
             }
         }
+
+
+
+
+
 
     }}
